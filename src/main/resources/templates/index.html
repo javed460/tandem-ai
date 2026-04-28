@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tandem AI</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="page">
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">
+                <svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5.5" cy="8.5" r="2.8"/>
+                    <circle cx="11.5" cy="8.5" r="2.8"/>
+                </svg>
+            </div>
+            <span class="nav-title">tandem<span>AI</span></span>
+        </div>
+    </nav>
+
+    <div class="panels">
+
+        <div class="panel">
+            <div class="panel-header">
+                <div class="ai-badge ab-gpt">
+                    <div class="ai-icon ai-icon-gpt">G</div>
+                    <span class="ai-name an-gpt">ChatGPT</span>
+                </div>
+                <div class="ph-right">
+                    <div class="status-live"><div class="sl-dot"></div><span class="sl-txt">live</span></div>
+                    <span class="model-tag">GPT-4o</span>
+                </div>
+            </div>
+            <div class="messages" id="gpt-messages">
+                <div class="empty-state" id="gpt-empty">
+                    <p>ChatGPT will respond here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-divider"></div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div class="ai-badge ab-gem">
+                    <div class="ai-icon ai-icon-gem">G</div>
+                    <span class="ai-name an-gem">Gemini</span>
+                </div>
+                <div class="ph-right">
+                    <div class="status-live"><div class="sl-dot"></div><span class="sl-txt">live</span></div>
+                    <span class="model-tag">2.0 Flash</span>
+                </div>
+            </div>
+            <div class="messages" id="gem-messages">
+                <div class="empty-state" id="gem-empty">
+                    <p>Gemini will respond here</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="input-zone">
+        <div class="bc-pill">
+            <div class="bc-dots">
+                <div class="bc-dot bcd-gpt"></div>
+                <div class="bc-dot bcd-gem"></div>
+            </div>
+            <span class="bc-txt">broadcasting to ChatGPT &amp; Gemini</span>
+        </div>
+        <div class="iz-row">
+            <textarea id="prompt-input" class="iz-input" rows="1"
+                      placeholder="Ask anything — both AIs respond at once..."></textarea>
+            <button id="send-btn" class="iz-send" onclick="sendPrompt()">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.5l13 6.5-13 6.5V9.8l9-1.8-9-1.8V1.5z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="iz-hint">Enter to send &nbsp;·&nbsp; Shift+Enter for new line</div>
+    </div>
+
+</div>
+
+<script th:src="@{/js/chat.js}"></script>
+</body>
+</html>
